@@ -1,0 +1,525 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fcfcfc;
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a252f;
+    padding: 1.2rem 3rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    color: #b4bcc2;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+.btn-nav {
+    background-color: #d35400;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    color: #fff !important;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(26, 37, 47, 0.75), rgba(26, 37, 47, 0.75)), url('interior home pic.jpeg') no-repeat center center/cover;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 1.5rem;
+    margin-top: 60px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto 2.5rem auto;
+    color: #eaeded;
+}
+
+.btn-main {
+    background-color: #d35400;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background 0.3s, transform 0.2s;
+    display: inline-block;
+}
+
+.btn-main:hover {
+    background-color: #e67e22;
+    transform: translateY(-2px);
+}
+
+/* Common Section Headers */
+.services, .showcase, .about {
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.services h2, .showcase h2, .about h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: #1a252f;
+    position: relative;
+}
+
+.section-subtitle {
+    color: #7f8c8d;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+/* Services / Features Section */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.card {
+    background: #fff;
+    padding: 2.5rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    max-width: 320px;
+    text-align: center;
+    transition: transform 0.3s;
+    border: 1px solid #f0f0f0;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    margin-bottom: 1rem;
+    color: #1a252f;
+    font-size: 1.4rem;
+}
+
+.card p {
+    color: #7f8c8d;
+    font-size: 0.95rem;
+}
+
+/* Showcase Section with Live Images */
+.showcase {
+    background-color: #f8f9fa;
+}
+
+.image-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.grid-item {
+    position: relative;
+    flex: 1 1 300px;
+    max-width: 350px;
+    height: 250px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.grid-item:hover img {
+    transform: scale(1.1);
+}
+
+.img-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    padding: 1.5rem;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.img-overlay h4 {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* About Section */
+.about p {
+    max-width: 750px;
+    margin: 0 auto;
+    font-size: 1.15rem;
+    color: #566573;
+}
+
+/* Footer */
+footer {
+    background-color: #1a252f;
+    color: #7f8c8d;
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.95rem;
+    border-top: 1px solid #2c3e50;
+}
+
+/* ==========================================================================
+   Authentication Pages (Login & Register) Styles
+   ========================================================================== */
+/* ==========================================================================
+   Authentication Pages (Login & Register) Styles
+   ========================================================================== */
+.auth-body {
+    background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%);
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;     /* Centers vertically */
+    min-height: 100vh;       /* Takes up full viewport height */
+    margin: 0;               /* Removes default browser margins */
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+}
+
+
+.auth-container {
+    background: #fff;
+    padding: 3rem 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+}
+
+.auth-container h2 {
+    color: #1a252f;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.auth-subtitle {
+    color: #7f8c8d;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 1.25rem;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: #2c3e50;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+.input-group input:focus {
+    border-color: #d35400;
+}
+
+.btn-auth {
+    width: 100%;
+    background-color: #d35400;
+    color: #fff;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 1rem;
+}
+
+.btn-auth:hover {
+    background-color: #e67e22;
+}
+
+.auth-footer {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #566573;
+}
+
+.auth-footer a, .auth-back a {
+    color: #d35400;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-footer a:hover, .auth-back a:hover {
+    text-decoration: underline;
+}
+
+.auth-back {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   Dashboard Workspace Grid Layout Styles
+   ========================================================================== */
+.dashboard-body {
+    display: flex;
+    background-color: #f4f6f8;
+    min-height: 100vh;
+    color: #2c3e50;
+}
+
+/* Sidebar Styling */
+/* Sidebar Styling Fix */
+.sidebar {
+    width: 260px;
+    background-color: #1a252f;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.sidebar-brand {
+    padding: 2rem 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    background-color: #111a24;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 1.5rem 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px; /* Balanced gap between menu items */
+}
+
+.sidebar-menu li {
+    width: 100%;
+}
+
+.sidebar-menu li a {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Spaces out your icons nicely from text */
+    padding: 0.8rem 1.5rem;
+    color: #b4bcc2;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.sidebar-menu li a:hover, .sidebar-menu li a.active {
+    color: #fff;
+    background-color: #2c3e50;
+    border-left: 4px solid #d35400;
+}
+
+.sidebar-footer {
+    padding: 1.5rem;
+    background-color: #111a24;
+    text-align: center;
+}
+
+.sidebar-footer a {
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+
+/* Main Content Workspace */
+.dashboard-main {
+    margin-left: 260px;
+    padding: 2.5rem;
+    width: calc(100% - 260px);
+    box-sizing: border-box;
+}
+
+.workspace-header {
+    margin-bottom: 2rem;
+}
+
+.workspace-header h2 {
+    font-size: 2rem;
+    color: #1a252f;
+}
+
+.workspace-header p {
+    color: #7f8c8d;
+}
+
+/* Operational Metrics Cards Grid */
+.metrics-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+}
+
+.metric-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    flex: 1 1 220px;
+    border: 1px solid #eef1f5;
+}
+
+.metric-card h3 {
+    font-size: 0.95rem;
+    color: #7f8c8d;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.metric-card .number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a252f;
+    margin-bottom: 0.5rem;
+}
+
+.status-up { color: #27ae60; font-size: 0.85rem; font-weight: 600; }
+.status-pending { color: #f39c12; font-size: 0.85rem; font-weight: 600; }
+.status-alert { color: #e74c3c; font-size: 0.85rem; font-weight: 600; }
+
+/* Dashboard Tables and Data Containers */
+.data-box {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border: 1px solid #eef1f5;
+}
+
+.data-box h3 {
+    margin-bottom: 1.2rem;
+    font-size: 1.2rem;
+}
+
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.dashboard-table th {
+    background-color: #f8f9fa;
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    color: #7f8c8d;
+    border-bottom: 2px solid #eef1f5;
+}
+
+.dashboard-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #eef1f5;
+    font-size: 0.95rem;
+}
+
+/* Status Badges */
+.badge {
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.badge-progress { background-color: #e8f8f5; color: #117a65; }
+.badge-design { background-color: #fef9e7; color: #b57914; }
+.badge-planning { background-color: #ebf5fb; color: #2980b9; }

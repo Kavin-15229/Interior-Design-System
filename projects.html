@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Tracking - Studio Workspace</title>
+    <!-- Use our version query parameter trick to prevent cache bugs -->
+    <link rel="stylesheet" href="style.css?v=2">
+    <style>
+        .workspace-split {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .form-side {
+            flex: 1 1 320px;
+            max-width: 400px;
+        }
+        .table-side {
+            flex: 2 1 500px;
+        }
+        .search-container {
+            margin-bottom: 16px;
+        }
+        .search-container input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        /* Force the dynamic dropdown box to render at standard full visibility height */
+        .form-box-layout select {
+
+            display: block !important;
+            width: 100% !important;
+            height: 42px !important;       /* Forces it to pop back out into standard size */
+    padding: 10px !important;
+    font-size: 14px !important;
+    background-color: #ffffff !important;
+    color: #2c3e50 !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    box-sizing: border-box !important;
+}
+
+        .form-box-layout label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 4px;
+            font-size: 14px;
+            color: #2c3e50;
+        }
+        .btn-action {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .btn-edit { background-color: #f39c12; color: white; margin-right: 4px; }
+        .btn-delete { background-color: #e74c3c; color: white; }
+    </style>
+</head>
+<body class="dashboard-body">
+
+    <!-- Workspace Sidebar Panel Layout -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">StudioCraft Admin</div>
+        <ul class="sidebar-menu">
+            <li><a href="dashboard.html">📊 Dashboard</a></li>
+            <li><a href="clients.html">👥 Clients</a></li>
+            <li><a href="projects.html" class="active">📐 Projects</a></li>
+            <li><a href="#">🎨 Designs</a></li>
+            <li><a href="#">🧮 Budget Calculator</a></li>
+            <li><a href="#">💳 Payments</a></li>
+            <li><a href="#">📈 Reports</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="home.html">🚪 Exit Workspace</a>
+        </div>
+    </aside>
+
+    <!-- Main Workspace Content Panel -->
+    <main class="dashboard-main">
+        <div class="workspace-header">
+            <h2>Interior Assignment Tracking</h2>
+            <p>Assign new property layout configurations to active clients.</p>
+        </div>
+
+        <div class="workspace-split">
+            <!-- Left Side: Project Tracking Form -->
+            <section class="form-side data-box">
+                <h3 id="formTitle">Initialize New Contract</h3>
+                <form id="projectForm" class="form-box-layout">
+                    <input type="hidden" id="projectId">
+                    
+                    <label for="projectName">Project Reference Name</label>
+                    <input type="text" id="projectName" placeholder="e.g., Luxury Living Room" required>
+
+                    <label for="projectClient">Assign Onboarded Client</label>
+                    <select id="projectClient" required>
+                        <!-- Injected dynamically using data store records -->
+                    </select>
+
+                    <label for="roomType">Property / Room Concept Type</label>
+                    <select id="roomType" required>
+                        <option value="" disabled selected>Select concept line</option>
+                        <option value="Living Room">Living Room Layout</option>
+                        <option value="Modular Kitchen">Modular Kitchen</option>
+                        <option value="Master Bedroom">Master Bedroom</option>
+                        <option value="Commercial Office">Commercial Office Space</option>
+                        <option value="Full Residence">Full Residence Renovation</option>
+                    </select>
+
+                    <label for="projectLocation">Site Location Area</label>
+                    <input type="text" id="projectLocation" placeholder="e.g., Anna Nagar, Chennai" required>
+
+                    <label for="startDate">Project Commitment Date</label>
+                    <input type="date" id="startDate" required>
+
+                    <label for="projectBudget">Allotted Budget Limit (₹)</label>
+                    <input type="number" id="projectBudget" placeholder="e.g., 350000" required>
+
+                    <!-- Clickable multi-file gallery selection area input -->
+                    <label>Design / Wall Image Gallery Reference</label>
+                    <div style="border: 2px dashed #cbd5e1; background-color: #f8fafc; padding: 15px; border-radius: 6px; text-align: center; margin-bottom: 14px;">
+                        <input type="file" id="projectImgFile" accept="image/*" multiple style="font-size: 13px; color: #64748b;">
+                        <p style="font-size: 11px; color: #94a3b8; margin-top: 4px;">Hold Ctrl / Shift to pick multiple images (PNG, JPG)</p>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%; padding: 12px; margin-top: 10px;">Track Project Assignment</button>
+                    <button type="button" id="cancelBtn" class="btn" style="width: 100%; padding: 10px; margin-top: 8px; display: none; background-color: #7f8c8d; color: white;">Cancel Edit</button>
+                </form>
+            </section>
+
+            <!-- Right Side: Search and Track Table Pipeline -->
+            <section class="table-side data-box">
+                <h3>Active Project Pipeline</h3>
+                
+                <div class="search-container">
+                    <input type="text" id="searchBar" placeholder="🔍 Search track records by project concept, assignment owner, or space profile..." onkeyup="searchProjects()">
+                </div>
+
+                <table class="dashboard-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Assignment Description</th>
+                            <th>Budget Value</th>
+                            <th>Milestone</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="projectTableBody">
+                        <!-- Javascript will automatically render assignment files here -->
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </main>
+
+    <script src="projects.js?v=2"></script>
+</body>
+</html>

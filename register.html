@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrator Registration - Studio Workspace</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        .auth-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 480px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        .auth-card h2 {
+            margin-bottom: 8px;
+            color: #1e293b;
+            font-weight: 700;
+        }
+        .auth-card p {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+        .auth-link {
+            display: block;
+            margin-top: 16px;
+            text-align: center;
+            font-size: 13px;
+            color: #0284c7;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .auth-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body class = "auth-body">
+
+    <div class="auth-card">
+        <h2>Register Business Account</h2>
+        <p>Set up your principal designer access credentials.</p>
+        
+        <form id="registerForm">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+                <div class="form-group">
+                    <label for="regName">Full Name</label>
+                    <input type="text" id="regName" placeholder="Designer Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPhone">Contact Phone</label>
+                    <input type="tel" id="regPhone" placeholder="Mobile line" required>
+                </div>
+            </div>
+            
+            <div class="form-group" style="margin-bottom: 12px;">
+                <label for="regEmail">Business Email</label>
+                <input type="email" id="regEmail" placeholder="name@studio.com" required>
+            </div>
+            
+            <div class="form-group" style="margin-bottom: 12px;">
+                <label for="regUsername">System Username</label>
+                <input type="text" id="regUsername" placeholder="Create username" required>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px;">
+                <div class="form-group">
+                    <label for="regPassword">Password</label>
+                    <input type="password" id="regPassword" placeholder="Set security keys" required>
+                </div>
+                <div class="form-group">
+                    <label for="regConfirmPassword">Confirm Password</label>
+                    <input type="password" id="regConfirmPassword" placeholder="Re-type security keys" required>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px;">Complete Registration</button>
+        </form>
+
+        <a href="login.html" class="auth-link">Return to Portal Sign-In</a>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>
+
+

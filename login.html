@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workspace Portal - Studio Admin</title>
+    <!-- Links clean structural design styles -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Small unique centered adjustments for Auth windows specifically */
+        body {
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        .auth-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        .auth-card h2 {
+            margin-bottom: 8px;
+            color: #1e293b;
+            font-weight: 700;
+        }
+        .auth-card p {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+        .auth-link {
+            display: block;
+            margin-top: 16px;
+            text-align: center;
+            font-size: 13px;
+            color: #0284c7;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .auth-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body class = "auth-body">
+
+    <div class="auth-card">
+        <h2>Studio Portal</h2>
+        <p>Sign in to access your business modules.</p>
+        
+        <form id="loginForm">
+            <div class="form-group" style="margin-bottom: 16px;">
+                <label for="loginUsername">Workspace Username</label>
+                <input type="text" id="loginUsername" placeholder="Enter username" required>
+            </div>
+            <div class="form-group" style="margin-bottom: 24px;">
+                <label for="loginPassword">Security Password</label>
+                <input type="password" id="loginPassword" placeholder="Enter password" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px;">Access Workspace</button>
+        </form>
+
+        <a href="register.html" class="auth-link">Onboard New Administrator Profile</a>
+    </div>
+
+    <!-- Injecting authentication management script -->
+    <script src="auth.js"></script>
+</body>
+</html>

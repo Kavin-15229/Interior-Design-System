@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designer Dashboard - Studio Workspace</title>
+    <!-- Import your existing unified project styles -->
+    <link rel="stylesheet" href="style.css?v=2">
+
+</head>
+<body class="dashboard-body">
+
+    <!-- Workspace Sidebar Panel Layout -->
+    <!-- Workspace Sidebar Panel Layout -->
+<aside class="sidebar">
+    <div class="sidebar-brand">StudioCraft Admin</div>
+    <ul class="sidebar-menu">
+        <li><a href="dashboard.html" class="active">📊 Dashboard</a></li>
+        <li><a href="clients.html">👥 Clients</a></li>
+        <li><a href="projects.html">📐 Projects</a></li>
+        <li><a href="#">🎨 Designs</a></li>s
+        <li><a href="#">🧮 Budget Calculator</a></li>
+        <li><a href="#">💳 Payments</a></li>
+        <li><a href="#">📈 Reports</a></li>
+    </ul>
+    <div class="sidebar-footer">
+        <a href="home.html" id="logoutBtn">🚪 Exit Workspace</a>
+    </div>
+</aside>
+
+
+    <!-- Main Live Workspace Panel View -->
+    <main class="dashboard-main">
+        <div class="workspace-header">
+            <h2 id="welcomeHeading">Welcome back!</h2>
+            <p>Here is the live status of your interior business operations.</p>
+        </div>
+
+        <!-- Operational Metrics Cards Grid Layout -->
+        <section class="metrics-grid">
+            <div class="metric-card">
+                <h3>Total Clients</h3>
+                <div class="number" id="dashTotalClients">0</div>
+                <span class="status-up">Active Accounts</span>
+            </div>
+            <div class="metric-card">
+                <h3>Active Projects</h3>
+                <div class="number" id="dashActiveProjects">0</div>
+                <span class="status-pending">In Progress</span>
+            </div>
+            <div class="metric-card">
+                <h3>Total Bookings Value</h3>
+                <div class="number" id="dashTotalBudget">₹0</div>
+                <span class="status-up">Gross Value</span>
+            </div>
+            <div class="metric-card">
+                <h3>Pending Receivables</h3>
+                <div class="number" id="dashPendingPayments">₹0</div>
+                <span class="status-alert">Awaiting Payment</span>
+            </div>
+        </section>
+
+        <!-- Current Operational Projects Pipeline Container -->
+        <section class="data-box">
+            <h3>Current Project Pipelines</h3>
+            <table class="dashboard-table">
+                <thead>
+                    <tr>
+                        <th>Project ID</th>
+                        <th>Client Name</th>
+                        <th>Room Concept</th>
+                        <th>Current Milestone</th>
+                    </tr>
+                </thead>
+                <tbody id="dashProjectTableBody">
+                    <!-- Dynamic client assignment pipelines injected here by JS -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Initialize Dashboard Automation Controls -->
+    <script src="dashboard.js"></script>
+</body>
+</html>
